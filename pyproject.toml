@@ -1,0 +1,13 @@
+[project]
+name = "project-mlops-2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dvc>=3.60.1",
+    "mlflow>=3.1.0",
+    "numpy>=2.3.0",
+    "pandas>=2.3.0",
+    "scikit-learn>=1.7.0",
+]
