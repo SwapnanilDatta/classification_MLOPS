@@ -1,5 +1,9 @@
+pandas
+numpy
 scikit-learn
 mlflow
-numpy
-pandas
+streamlit
+python-dotenv
+joblib
+pytest
 dvc
