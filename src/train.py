@@ -10,14 +10,12 @@ import logging
 import joblib
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-# Configure logging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Set MLflow tracking URI and authentication
 os.environ['MLFLOW_TRACKING_USERNAME'] = os.getenv('MLFLOW_TRACKING_USERNAME')
 os.environ['MLFLOW_TRACKING_PASSWORD'] = os.getenv('MLFLOW_TRACKING_PASSWORD')
 
@@ -43,7 +41,7 @@ def train_model(X_train, y_train):
         'min_samples_leaf': [1, 2]
     }
 
-    # GridSearchCV
+   
     grid_search = GridSearchCV(model, param_grid, cv=3, scoring='accuracy', verbose=1, n_jobs=-1)
     grid_search.fit(X_train, y_train)
 
@@ -64,15 +62,14 @@ def main():
     try:
         df = load_data()
 
-        # Separate features and target
+       
         X = df.drop(columns='Churn')
         y = df['Churn']
 
-        # Train-test split
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
         with mlflow.start_run():
-        # Train the model with GridSearchCV
+     
             best_model = train_model(X_train, y_train)
 
             # Evaluate the model

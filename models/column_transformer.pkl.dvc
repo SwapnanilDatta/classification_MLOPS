@@ -1,0 +1,5 @@
+outs:
+- md5: cb7237cd5cbc7cee6eadabb6f2ed8b5b
+  size: 5585
+  hash: md5
+  path: column_transformer.pkl

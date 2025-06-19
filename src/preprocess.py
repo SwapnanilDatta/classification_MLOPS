@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from dotenv import load_dotenv
 
-# Setup logging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -41,14 +41,14 @@ def encode_features(df):
 
     label_encoders = {}
 
-    # Label encode binary columns (excluding SeniorCitizen)
+   
     for col in binary_columns:
         le = LabelEncoder()
         df[col] = le.fit_transform(df[col])
         label_encoders[col] = le
         logger.info(f"Label encoded: {col}")
 
-    # Convert SeniorCitizen from Yes/No → 1/0 if needed (already numeric in some versions)
+ 
     if df['SeniorCitizen'].dtype == 'object':
         df['SeniorCitizen'] = df['SeniorCitizen'].map({'Yes': 1, 'No': 0})
 

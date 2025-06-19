@@ -1,0 +1,5 @@
+outs:
+- md5: a7c4174c51851e9023c77e77b56b82c8
+  size: 484
+  hash: md5
+  path: churn_encoder.pkl
